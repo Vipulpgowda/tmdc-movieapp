@@ -46,7 +46,7 @@ function Header(props) {
                     <Movie index={index} updateMovielist={props.updateMovielist} />
                     :
                     <>
-                        <Genrelist handleSubmit={handleSubmit} />
+                        <Genrelist moviedata={moviedata} handleSubmit={handleSubmit} />
                         <Movielist filterMovies={filterMovies} handleMovieSubmit={handleMovieSubmit} />
 
 

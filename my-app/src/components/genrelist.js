@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { moviedata } from '../_testdata/movie';
+//import { moviedata } from '../_testdata/movie';
 
 import '../stylesheets/pages/_genrelist.scss';
 
 function Genrelist(props) {
     const [genre, setGenre] = useState([]);
-
+    let moviedata = props.movidata;
     useEffect(() => {
         let genreitems = [];
         let removeDuplicate = [];
@@ -14,7 +14,7 @@ function Genrelist(props) {
             removeDuplicate = [...new Set(genreitems)];
             return setGenre(removeDuplicate);
         })
-    }, [])
+    }, [moviedata])
 
     return (
         <>

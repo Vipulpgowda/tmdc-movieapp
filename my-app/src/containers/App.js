@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     axios.get("/getMovies")
       .then((res) => res.data)
-      .then((data) => setMoviedata(data));
+      .then((data) => console.log(data));
   }, []);
 
   const updateMovielist = (data) => {

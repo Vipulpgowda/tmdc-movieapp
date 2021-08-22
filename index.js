@@ -31,6 +31,7 @@ function updatemovie(movie) {
 app.use(cors())
 
 app.get("/getMovies", (req, res) => {
+  console.log(movielist);
   res.send(JSON.stringify(movielist))
 });
 

@@ -14,10 +14,7 @@ var jsonParser = bodyParser.json();
 
 // Serve static files from the React frontend app
 
-if(process.env.NODE_ENV === "production"){
-  console.log(process.env.NODE_ENV)
-  app.use(express.static(path.join(__dirname, 'my-app/build')))
-}
+app.use(express.static(path.join(__dirname, 'my-app/build'))) 
 
 app.use(cors())
 
@@ -29,11 +26,11 @@ function updatemovie(movie) {
   return movielist;
 }
 
-app.get("/getMovies", (req, res) => {
+app.get(`/getMovies`, (req, res) => {
   res.send(JSON.stringify(movielist))
 });
 
-app.post('/updateMovies', jsonParser, (req, res) => {
+app.post(`/updateMovies`, jsonParser, (req, res) => {
 
   let input = req.body.data;
   res.send(JSON.stringify(updatemovie(input)))

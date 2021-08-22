@@ -30,7 +30,6 @@ function updatemovie(movie) {
 }
 
 app.get("/getMovies", (req, res) => {
-  console.log(process.env.NODE_ENV)
   res.send(JSON.stringify(movielist))
 });
 

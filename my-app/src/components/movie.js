@@ -5,6 +5,7 @@ import '../stylesheets/pages/_movie.scss'
 
 function Movie(props) {
     let movie = props.index;
+    let url = props.url;
     let updateMovielist = props.updateMovielist;
     const [movieInputs, setMovieInputs] = useState(movie);
 
@@ -26,7 +27,7 @@ function Movie(props) {
     }
 
     useEffect(() => {
-        axios.post('/updateMovies', { data: movieInputs })
+        axios.post(`${url}/updateMovies`, { data: movieInputs })
             .then((res) => updateMovielist(res.data))
             .catch((err) => console.log("Error", err))
     }, [movieInputs]);

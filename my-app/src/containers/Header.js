@@ -8,6 +8,7 @@ import '../stylesheets/pages/_header.scss'
 
 function Header(props) {
     const moviedata = props.moviedata;
+    const url = props.url;
     const [genre, setGenre] = useState('');
     const [index, setIndex] = useState(Number);
     const [isBack, setisBack] = useState(false);
@@ -43,7 +44,7 @@ function Header(props) {
             <div className="genre-list">
 
                 {index && isBack ?
-                    <Movie index={index} updateMovielist={props.updateMovielist} />
+                    <Movie index={index} url={url} updateMovielist={props.updateMovielist} />
                     :
                     <>
                         <Genrelist moviedata={moviedata} handleSubmit={handleSubmit} />

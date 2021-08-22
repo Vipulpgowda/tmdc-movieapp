@@ -1,4 +1,4 @@
-import React,{ useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import '../stylesheets/main.scss'
 import axios from 'axios';
@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header moviedata={moviedata} updateMovielist={updateMovielist}/>
+      <Header moviedata={moviedata} updateMovielist={updateMovielist} />
     </div>
   );
 }

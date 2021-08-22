@@ -5,7 +5,7 @@ To run the app in development
 3. Open http://localhost/3000
 
 
-To check the live deployed in heroku
+To check the live demo deployed in heroku
 
 https://tmdc-movilies.herokuapp.com/
 

@@ -1,3 +1,3 @@
 export const API =  {
-    url : "http://tmdc-movilies.herokuapp.com/"
+    url : "https://tmdc-movilies.herokuapp.com/"
 }

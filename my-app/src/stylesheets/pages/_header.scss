@@ -1,0 +1,42 @@
+.header{
+    padding: 0;
+    margin: 0;
+    height: 4rem;
+    display: flex;
+    span{
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 32px;
+        margin: 1.5rem 2rem 0rem 0rem;
+        height: 3rem;
+        width: 3rem;
+        background-color: cornsilk;
+        border-radius: 2rem;
+    }
+    h3{
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width:100%;
+        font-weight: 700;
+        font-family: cursive;
+    }
+}
+
+.back_button{
+    margin: 0.75rem;
+    width: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.genre-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

@@ -13,8 +13,10 @@ const app = express();
 var jsonParser = bodyParser.json();
 
 // Serve static files from the React frontend app
-
-app.use(express.static(path.join(__dirname, 'my-app/build'))) 
+if(process.env.NODE_ENV === "production"){
+  console.log(process.env.NODE_ENV)
+  app.use(express.static(path.join(__dirname, 'my-app/build')))
+} 
 
 app.use(cors())
 

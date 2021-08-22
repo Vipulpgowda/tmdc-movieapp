@@ -32,7 +32,7 @@ app.get("/getMovies", (req, res) => {
   res.send(JSON.stringify(movielist))
 });
 
-app.post('/change', jsonParser, (req, res) => {
+app.post('/updateMovies', jsonParser, (req, res) => {
 
   let input = req.body.data;
   res.send(JSON.stringify(updatemovie(input)))

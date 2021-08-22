@@ -25,9 +25,11 @@ function Movie(props) {
     }
 
     useEffect(() => {
-        axios.post('/change',{data:  movieInputs})
-          .then((res) => props.updateMovielist(res.data))
-          .catch((err) => console.log("Error",err))    
+        setTimeout( () => {
+            axios.post('/updateMovies',{data:  movieInputs})
+            .then((res) => props.updateMovielist(res.data))
+            .catch((err) => console.log("Error",err))    
+        },5000)
       }, [movieInputs,props]);
 
     return (

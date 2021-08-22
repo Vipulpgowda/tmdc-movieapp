@@ -13,12 +13,12 @@ const app = express();
 // create application/json parser
 var jsonParser = bodyParser.json();
 
-// Serve static files from the React frontend app
-app.use(express.static(path.join(__dirname, 'my-app/build')))
-// Anything that doesn't match the above, send back index.html
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/my-app/build/index.html'))
-})
+// // Serve static files from the React frontend app
+// app.use(express.static(path.join(__dirname, 'my-app/build')))
+// // Anything that doesn't match the above, send back index.html
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname + '/my-app/build/index.html'))
+// })
 
 var movielist = moviedata;
 

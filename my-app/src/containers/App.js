@@ -16,7 +16,7 @@ function App() {
   const [moviedata, setMoviedata] = useState([]);
 
   useEffect(() => {
-    axios.get(`/getMovies`)
+    axios.get(`${url}getMovies`)
       .then((res) => res.data)
       .then((data) => setMoviedata(data));
   }, []);

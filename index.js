@@ -30,10 +30,6 @@ function updatemovie(movie) {
 
 app.use(cors())
 
-app.get("/", (req, res) => {
-  res.json({ message : "Hello World"})
-});
-
 app.get("/getMovies", (req, res) => {
   res.send(JSON.stringify(movielist))
 });

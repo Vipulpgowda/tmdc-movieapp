@@ -1,4 +1,4 @@
-export const moviedata = [
+const moviedata = [
     {
         "id": "1",
         "title": "Black Panther",
@@ -1334,3 +1334,7 @@ export const moviedata = [
         "posterurl": "https://images-na.ssl-images-amazon.com/images/M/MV5BNGNiNWQ5M2MtNGI0OC00MDA2LWI5NzEtMmZiYjVjMDEyOWYzXkEyXkFqcGdeQXVyMjM4NTM5NDY@._V1_SY500_CR0,0,337,500_AL_.jpg"
     }
 ]
+
+module.exports = {
+    moviedata
+}

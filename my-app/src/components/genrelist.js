@@ -14,7 +14,7 @@ function Genrelist(props) {
             removeDuplicate = [...new Set(genreitems)];
             return setGenre(removeDuplicate);
         })
-    }, [moviedata])
+    }, [])
 
     return (
         <>

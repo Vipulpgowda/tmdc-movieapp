@@ -26,12 +26,12 @@ function Movie(props) {
     }
 
     useEffect(() => {
-        setTimeout( () => {
+       return setTimeout( () => {
             axios.post('/updateMovies',{data:  movieInputs})
             .then((res) => updateMovielist(res.data))
             .catch((err) => console.log("Error",err))    
         },5000)
-      }, [movieInputs,updateMovielist]);
+      }, [movieInputs]);
 
     return (
         <>

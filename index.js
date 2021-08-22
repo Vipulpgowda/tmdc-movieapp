@@ -5,6 +5,8 @@ const path = require('path')
 const { moviedata } = require('./test.js')
 const config = require('./config.js')
 
+const PORT = process.env.PORT || 3001;
+
 const app = express();
 
 // create application/json parser
@@ -44,6 +46,6 @@ app.get('*', (req, res) => {
 })
 }
 
-app.listen(config.PORT, config.HOST, function () {
-  console.log(`App listening on ${config.NODE_ENV} through http://${config.HOST}:${config.PORT}`);
+app.listen(config.PORT, () => {
+  console.log(`Server listening on ${config.PORT}`);
 });

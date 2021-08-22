@@ -2,14 +2,13 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function Movie(props) {
-    let movie = props.index;
-    let url = props.url;
-    let updateMovielist = props.updateMovielist;
-    const [movieInputs, setMovieInputs] = useState(movie);
+    let { index, url, updateMovielist } = props;
+
+    const [movieInputs, setMovieInputs] = useState(index);
 
     useEffect(() => {
-        setMovieInputs(movie)
-    }, [movie]);
+        setMovieInputs(index)
+    }, [index]);
 
     const changeHandler = (event) => {
         event.persist();

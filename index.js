@@ -18,7 +18,7 @@ if(process.env.NODE_ENV === "production"){
   app.use(express.static(path.join(__dirname, 'my-app/build')))
 } 
 
-app.use(cors())
+app.use(cors());
 
 var movielist = moviedata;
 
@@ -33,16 +33,14 @@ app.get(`/getMovies`, (req, res) => {
 });
 
 app.post(`/updateMovies`, jsonParser, (req, res) => {
-
   let input = req.body.data;
   res.send(JSON.stringify(updatemovie(input)))
 })
+
 if(process.env.NODE_ENV === "production"){
-// Anything that doesn't match the above, send back index.html
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname + '/my-app/build/index.html'))
-})
-}
+})}
 
 app.listen(config.PORT, () => {
   console.log(`Server listening on ${config.PORT}`);

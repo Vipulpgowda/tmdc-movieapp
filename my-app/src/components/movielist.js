@@ -2,8 +2,10 @@ import React from 'react';
 
 function Movielist(props) {
 
-    const movielist = props.filterMovies.map((mov, index) => {
-        return <div key={index} className="card movie__item" style={{ "width": "18rem" }} onClick={(e) => props.handleMovieSubmit(e)}>
+    let { filterMovies, handleMovieSubmit } = props;
+
+    const movielist = filterMovies.map((mov, index) => {
+        return <div key={index} className="card movie__item" style={{ "width": "18rem" }} onClick={(e) => handleMovieSubmit(e)}>
             <img className="card-img-top poster__img" src={mov.posterurl} alt={mov.title} />
             <div className="card-body">
                 <h6 className="card-title">{mov.title}</h6>

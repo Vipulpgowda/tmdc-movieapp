@@ -4,8 +4,7 @@ import Movie from '../components/movie'
 import Movielist from '../components/movielist'
 
 function Header(props) {
-    const moviedata = props.moviedata;
-    const url = props.url;
+    const { moviedata,url,updateMovielist } = props;
     const [genre, setGenre] = useState('');
     const [index, setIndex] = useState(Number);
     const [isBack, setisBack] = useState(false);
@@ -40,7 +39,7 @@ function Header(props) {
         <div className="genre-list">
             {index && isBack 
                 ?
-                <Movie index={index} url={url} updateMovielist={props.updateMovielist} />
+                <Movie index={index} url={url} updateMovielist={updateMovielist} />
                 :
                 <>
                 <Genrelist moviedata={moviedata} handleSubmit={handleSubmit} />

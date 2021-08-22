@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 function Genrelist(props) {
     const [genre, setGenre] = useState([]);
-    let moviedata = props.moviedata;
+    const { moviedata,handleSubmit } = props;
+
     useEffect(() => {
         let genreitems = [];
         let removeDuplicate = [];
@@ -19,7 +20,7 @@ function Genrelist(props) {
             <div className="genre__list">
                 <ul>
                     {genre.map((gen, index) => (
-                        <li className="btn btn-primary genre-item" key={index} value={gen} onClick={(e) => props.handleSubmit(e)}>{gen}</li>
+                        <li className="btn btn-primary genre-item" key={index} value={gen} onClick={(e) => handleSubmit(e)}>{gen}</li>
                     ))}
                 </ul>
             </div>

@@ -27,7 +27,7 @@ function Movie(props) {
     }
 
     useEffect(() => {
-        axios.post(`${url}/updateMovies`, { data: movieInputs })
+        axios.post(`/updateMovies`, { data: movieInputs })
             .then((res) => updateMovielist(res.data))
             .catch((err) => console.log("Error", err))
     }, [movieInputs]);

@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from 'react';
-//import { moviedata } from '../_testdata/movie';
-
-import '../stylesheets/pages/_genrelist.scss';
 
 function Genrelist(props) {
     const [genre, setGenre] = useState([]);

@@ -1,19 +1,24 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { API as prodAPI } from '../config/prod.config';
+import { API as devAPI } from '../config/dev.config';
 import Header from './Header';
 import '../stylesheets/main.scss'
-import axios from 'axios';
-import {API as prodAPI} from '../config/prod.config';
-import {API as devAPI} from '../config/dev.config';
 
 function App() {
+  
+  const [moviedata, setMoviedata] = useState([]);
+
   let url;
-  if(process.env.NODE_ENV === "production"){
-   url = prodAPI.url;
-  }else{
-  url = devAPI.url;
+  if (process.env.NODE_ENV === "production") {
+    url = prodAPI.url;
+  } else {
+    url = devAPI.url;
   }
 
-  const [moviedata, setMoviedata] = useState([]);
+  const updateMovielist = (data) => {
+    setMoviedata(data)
+  }
 
   useEffect(() => {
     axios.get(`${url}getMovies`)
@@ -21,15 +26,9 @@ function App() {
       .then((data) => setMoviedata(data));
   }, []);
 
-  const updateMovielist = (data) => {
-    setMoviedata(data)
-  }
-
   return (
     <div className="App">
-      <React.Suspense fallback={<h1>Loading!!!!!</h1>}>
       <Header url={url} moviedata={moviedata} updateMovielist={updateMovielist} />
-      </React.Suspense>
     </div>
   );
 }

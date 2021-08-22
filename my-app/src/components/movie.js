@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import '../stylesheets/pages/_movie.scss'
-
 function Movie(props) {
     let movie = props.index;
     let url = props.url;

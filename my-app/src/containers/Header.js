@@ -2,9 +2,6 @@ import React, { useState } from 'react'
 import Genrelist from '../components/genrelist'
 import Movie from '../components/movie'
 import Movielist from '../components/movielist'
-import '../stylesheets/pages/_header.scss'
-// import { moviedata } from '../_testdata/movie';
-
 
 function Header(props) {
     const moviedata = props.moviedata;
@@ -29,33 +26,28 @@ function Header(props) {
         setisBack(false)
     }
 
-
     const filterMovies = genre.length ? moviedata.filter((item) => {
         return item.genres.includes(genre)
     }) : moviedata
 
     return (
         <>
-            <div className="header">
-                {isBack && <button className="btn btn-primary back_button" onClick={handleBack}>Back</button>}
+        <div className="header">
+            {isBack && <button className="btn btn-primary back_button" onClick={handleBack}>Back</button>}
                 <h3>Moviely.com</h3>
                 <span>V</span>
-            </div>
-            <div className="genre-list">
-
-                {index && isBack ?
-                    <Movie index={index} url={url} updateMovielist={props.updateMovielist} />
-                    :
-                    <>
-                        <Genrelist moviedata={moviedata} handleSubmit={handleSubmit} />
-                        <Movielist filterMovies={filterMovies} handleMovieSubmit={handleMovieSubmit} />
-
-
-                    </>
-                }
-
-            </div>
-
+        </div>
+        <div className="genre-list">
+            {index && isBack 
+                ?
+                <Movie index={index} url={url} updateMovielist={props.updateMovielist} />
+                :
+                <>
+                <Genrelist moviedata={moviedata} handleSubmit={handleSubmit} />
+                <Movielist filterMovies={filterMovies} handleMovieSubmit={handleMovieSubmit} />
+                </>
+            }
+        </div>
         </>
     )
 }

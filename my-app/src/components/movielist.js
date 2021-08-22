@@ -1,5 +1,4 @@
 import React from 'react';
-import '../stylesheets/pages/_movielist.scss'
 
 function Movielist(props) {
 
@@ -15,8 +14,6 @@ function Movielist(props) {
             </div>
         </div>
     })
-
-
 
     return (
         <div className="movie__list">

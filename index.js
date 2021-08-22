@@ -13,12 +13,9 @@ const app = express();
 // create application/json parser
 var jsonParser = bodyParser.json();
 
-// // Serve static files from the React frontend app
-// app.use(express.static(path.join(__dirname, 'my-app/build')))
-// // Anything that doesn't match the above, send back index.html
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname + '/my-app/build/index.html'))
-// })
+// Serve static files from the React frontend app
+app.use(express.static(path.join(__dirname, 'my-app/build')))
+
 
 var movielist = moviedata;
 
@@ -39,6 +36,11 @@ app.post('/change', jsonParser, (req, res) => {
 
   let input = req.body.data;
   res.send(JSON.stringify(updatemovie(input)))
+})
+
+// Anything that doesn't match the above, send back index.html
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/my-app/build/index.html'))
 })
 
 

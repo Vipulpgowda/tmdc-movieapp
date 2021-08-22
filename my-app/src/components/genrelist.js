@@ -5,7 +5,7 @@ import '../stylesheets/pages/_genrelist.scss';
 
 function Genrelist(props) {
     const [genre, setGenre] = useState([]);
-    let moviedata = props.movidata;
+    let moviedata = props.moviedata;
     useEffect(() => {
         let genreitems = [];
         let removeDuplicate = [];
